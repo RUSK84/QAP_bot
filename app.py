@@ -44,7 +44,7 @@ def get_price(message: telebot.types.Message):
         bot.reply_to(message, f'Не удалось обработать команду\n{e}')
     #если все введено верно - выдает текст
     else:
-        text = f'Переводим {quote} в {base}\nЦена {amount} {guote} в {base} - {total_base}'
+        text = f'Переводим {guote} в {base}\nЦена {amount} {guote} в {base} - {total_base}'
         bot.send_message(message.chat.id, text)
 
 
