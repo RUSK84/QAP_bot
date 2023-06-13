@@ -27,7 +27,7 @@ def get_price(message: telebot.types.Message):
         values = message.text.split(' ')
         #проверяем на колличество введенных значений (правильно - 1 валюта, 2 валюта, сколько)
         if len(values) != 3:
-            raise ConvertionException('Слишком много параметров.')
+            raise ConvertionException('Введите команду или 3 параметра')
 
         guote, base, amount = values
         total_base = CryptoConvertor.get_price(guote, base, amount)
