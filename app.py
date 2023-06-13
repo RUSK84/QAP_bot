@@ -1,5 +1,5 @@
 import telebot
-from config import keys, TOKEN
+from config import keys, TOKEN #здесь можно поставить *, что бы перенести все из config
 from extensions import ConvertionException, CryptoConvertor
 
 bot = telebot.TeleBot(TOKEN)
