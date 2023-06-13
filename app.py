@@ -7,7 +7,7 @@ bot = telebot.TeleBot(TOKEN)
 #обработчик инструкций
 @bot.message_handler(commands=['start', 'help'])
 def help(message: telebot.types.Message):
-    text = 'Чтобы начать работать введите команду боту в следующем формате: \n<имя валюты цену которой нужно узнать> \
+    text = 'Привет! Я Бот-Конвертер валют.\nЧтобы начать работать введите команду боту в следующем формате: \n<имя валюты цену которой нужно узнать> \
 <имя валюты в которой надо узнать цену первой валюты> \
 <количество первой валюты> \nУвидить список всех доступных валют: /values'
     bot.reply_to(message, text)
@@ -39,7 +39,7 @@ def get_price(message: telebot.types.Message):
         bot.reply_to(message, f'Не удалось обработать команду\n{e}')
     #если все введено верно - выдает текст
     else:
-        text = f'Цена {amount} {guote} в {base} - {total_base}'
+        text = f'Переводим {quote} в {base}\nЦена {amount} {guote} в {base} - {total_base}'
         bot.send_message(message.chat.id, text)
 
 
